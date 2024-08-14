@@ -1,0 +1,170 @@
+:root {
+    --dk-grey: #222;
+    --cream: #F4F2DE;
+    --blue: #A1CCD1;
+    --dk-green: #7C9D96;
+    --orange: #E9B384;
+    --dk-orange: #C0824D;
+    --fonts: "Raleway", "Lato", sans-serif;
+    --font-size: 16px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonts);
+    background-color: var(--dk-green);
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+.list-item {
+    list-style: none;
+}
+
+.list-item a {
+    text-decoration: none;
+}
+
+header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) min-content;
+    background: var(--cream);
+    width: 100%;
+    padding: 0 1rem;
+}
+
+#name-at-top {
+    color: var(--dk-orange);
+}
+
+#tagline {
+    text-align: right;
+}
+
+nav ul {
+    visibility: hidden;
+    height: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    color: var(--dk-grey);
+}
+
+main section {
+    background-color: var(--dk-grey);
+    color: var(--cream);
+}
+
+main section img {
+    width: 100%;
+    object-fit: cover;
+}
+
+footer {
+    height: 100%;
+    margin: 0;
+    background-color: var(--cream);
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, min-content);
+    gap: 0.5rem;
+}
+
+footer h2 {
+    margin: 0.25rem;
+}
+
+#social-link-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#social-link-list .list-item {
+    padding: 0.25rem 0;
+}
+
+#social-link-list a {
+    color: var(--dk-orange);
+}
+
+
+/* design for tablet screen */
+ @media screen and (min-width: 600px) {
+    body {
+        background-color: red;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-items: center;
+        margin: 0;
+        gap: 0 5rem;
+        padding: 1rem;
+        text-align: center;
+        visibility: visible;
+        height: unset;
+    }
+    
+    nav .list-item {
+        background-color: var(--orange);
+        border: 3px groove var(--dk-orange);
+        border-radius: 5%;
+        padding: 0 10px;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: var(--dk-grey);
+        display: block;
+        padding: 1rem;
+    }
+    nav .list-item:hover{
+        background-color: var(--dk-orange);
+        border-color: var(--orange);
+    }
+
+    nav .list-item:focus{
+        background-color: var(--dk-orange);
+    }
+
+    main {
+        grid-template-rows: minmax(250px, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+
+    #social-link-list {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+} 
